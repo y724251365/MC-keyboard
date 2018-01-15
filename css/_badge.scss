@@ -1,0 +1,45 @@
+.badge {
+  display: inline-block;
+  padding: 0 .2rem;
+  font-size: .32rem;
+  font-weight: bold;
+  line-height: .666667rem;
+  color: #fff;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  border-radius: 0.25rem;
+  &:empty {
+    display: none;
+  }
+}
+
+.badge-pill {
+  border-radius: .346667rem;
+}
+
+.badge-primary {
+  color: $white;
+  background-color: $coinect-blue;
+}
+.badge-dark {
+  color: $white;
+  background-color: $dark;
+}
+
+.badge-dark[href]:focus, .badge-dark[href]:hover {
+  color: $white;
+  text-decoration: none;
+  background-color: $dark;
+}
+
+.badge-light {
+  color: $dark;
+  background-color: $light;
+}
+
+.badge-light[href]:focus, .badge-light[href]:hover {
+  color: $dark;
+  text-decoration: none;
+  background-color: $light;
+}

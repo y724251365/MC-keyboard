@@ -1,0 +1,38 @@
+// member card
+.member {
+  display: flex;
+  display: -webkit-flex;
+  margin-top: $m-top;
+  background-color: $gray-200;
+  //border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+
+  .member-item {
+    flex: 1 1 auto;
+    text-align: center;
+    padding: .266667rem .4rem;
+    color: $gray-light;
+    font-size: $size-desc;
+    &:last-child {
+      text-align: right;
+    }
+
+    .title, .tips {
+      color: $gray-500;
+    }
+    .balance{
+      #Card_sum{
+        font-size: $size-title*1.68;
+        color: $gray-light !important;
+        font-weight: 400 !important;
+      }
+    }
+    .redpacket {
+      font-size: $size-title;
+    }
+    .btn{
+      margin-top: $m-top;
+    }
+
+  }
+}

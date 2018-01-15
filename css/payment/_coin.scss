@@ -1,0 +1,465 @@
+.putcoin {
+  justify-content: center;
+  align-items:center;
+  text-align: center;
+  background: $white;
+  overflow: hidden;
+  .title{
+    padding: $padding-top 0;
+    font-size: $size-desc;
+    color: $gray-500;
+  }
+  .coin-circle {
+    width: 100%;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    justify-content:center;
+    align-items: center;
+    padding: $padding-top 0;
+    .col-4{
+      margin-bottom: $m-top*2;
+    }
+  }
+  .coin-info{
+    font-size: $size-desc;
+    color: $gray-500;
+  }
+  .busy {
+    .coin {
+      background-color: $gray-500;
+    }
+  }
+}
+
+//投币-圆圈
+.coin {
+  display: inline-block;
+  width: $size-logo;
+  height: $size-logo;
+  line-height: $size-logo;
+  border-radius: 50%;
+  overflow: hidden;
+  box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+  color: $white;
+  background-color: #FFBE00;
+  font-size: $size-desc;
+  margin-bottom: $m-top;
+
+  & span:last-child {
+    font-size: $size-title*1.3;
+  }
+}
+
+// 投币-卡片
+.coin-card {
+  .coin {
+    margin-bottom: 0;
+  }
+  .coin2 {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+    min-height: 5rem;
+    margin-bottom: 1rem;
+    padding: 10px;
+    border-radius: 2px;
+    background: -webkit-gradient(radial, 153 0, 50, 220 -278, 465, from(#9CCC65), to(#8BC34A));
+    color: #fff;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+    .col {
+      border-right: 2px dashed rgba(255, 255, 255, .3);
+    }
+  }
+  .paycard {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1rem;
+    border-radius: 2px;
+    overflow: hidden;
+    color: #fff;
+    background: -webkit-gradient(radial, 153 0, 50, 220 -278, 465, from(#9CCC65), to(#8BC34A));
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.14), 0 4px 8px rgba(0, 0, 0, 0.28);
+    .img {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 25%;
+      -ms-flex: 0 0 25%;
+      flex: 0 0 25%;
+      max-width: 25%;
+    }
+    .info {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 40%;
+      -ms-flex: 0 0 40%;
+      flex: 0 0 40%;
+      max-width: 40%;
+      padding: 0 5px;
+      text-align: left;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      .title, .price {
+        //color: $black;
+        font-size: 14px;
+        font-weight: bold;
+      }
+      .desc, .unit {
+        font-size: 10px;
+        color: $gray-lighter;
+      }
+      .price {
+        color: $red;
+      }
+    }
+    .buy {
+      -webkit-box-flex: 0;
+      -webkit-flex: 0 0 35%;
+      -ms-flex: 0 0 35%;
+      flex: 0 0 35%;
+      max-width: 35%;
+    }
+  }
+  .busy {
+    background: -webkit-gradient(radial, 153 0, 50, 220 -278, 465, from($gray-lighter), to($gray-lighter));
+    box-shadow: none;
+    color: $gray-light;
+  }
+  .price {
+    font-size: 2rem;
+  }
+  .time {
+    font-size: 2rem;
+    margin-right: 10px;
+  }
+}
+
+// 投币-键盘
+.coin-keyboard {
+  .amount-wrapper {
+    height: .466667rem * 4;
+    background-color: $gray-200;
+    text-align: right;
+    padding: 0 10px;
+    .amount {
+      color: $gray-600;
+      overflow: hidden;
+      .tips1{
+        height: $size-title*3;
+        line-height: $size-title*3;
+        overflow: hidden;
+        .title{
+          font-size: $size-title *1.5;
+        }
+        .money{
+          font-size: $size-title*2;
+        }
+      }
+      .tips2{
+        font-size: $size-desc;
+        height: $size-desc;
+        line-height: $size-desc;
+      }
+    }
+  }
+
+  .keypad {
+    font-weight: 200;
+    font-size: $size-title;
+    .colx {
+      float: left;
+      width: 25%;
+      overflow: hidden;
+      background-color: $white;
+      border-left: 1px solid $gray-lighter;
+      .key {
+        display: block;
+        color: $gray-700;
+        background: $white;
+        text-align: center;
+        border-style: solid;
+        border-width: 0 0 1px 0;
+        border-color: $gray-lighter;
+      }
+      .digit {
+        height: $digit-height;
+        line-height: $digit-height;
+        font-size: $font-lg;
+        &:active{
+          background: $google-grey;
+        }
+      }
+      .back {
+        height: $digit-height;
+        line-height: $digit-height;
+      }
+      .empty {
+        height: $digit-height;
+        line-height: $digit-height;
+        font-size: $font-md;
+        background: $google-grey;
+        &:active{
+          color: $white;
+          background: $danger;
+        }
+      }
+      .enter {
+        height: $digit-handle;
+        line-height: $digit-handle;
+        font-size: $font-md;
+        color: $white;
+        background: $success;
+        border: none;
+        &:active{
+          color: $dark;
+          background: $google-grey;
+        }
+      }
+    }
+  }
+  .busy{
+    .colx{
+      .enter {
+        background: $gray-500;
+        &:active{
+          color: $white;
+          background: $gray-500;
+        }
+      }
+    }
+  }
+}
+
+// 投币 - 云货道
+.yhd {
+  display: flex;
+  display: -webkit-flex;
+  flex-direction:column;
+  height: 100%;
+  box-sizing: border-box;
+  & *, :after, :before {
+    box-sizing: inherit
+  }
+  ul {
+    padding: 0;
+    list-style: none;
+    -webkit-box-flex: 0;
+    -ms-flex: none;
+    flex: none
+  }
+  img {
+    max-width: 100%
+  }
+  h3, p, ul {
+    margin: 0
+  }
+}
+
+.goodscard {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100%;
+  overflow: hidden;
+  .channel-wrapper {
+    width: 2.266667rem;
+    height: 100%;
+    background-color: $light;
+  }
+  .channel {
+    //width: 2.266667rem;
+    //height: 100%;
+    //overflow-y: auto;
+    //background-color: #f8f8f8;
+    //-webkit-overflow-scrolling: touch;
+    li {
+      position: relative;
+      padding: .466667rem .2rem;
+      border-bottom: 1px solid #ededed;
+      font-size: .346667rem;
+      color: $gray-700;
+    }
+    .on {
+      background-color: $white;
+      border-right-color: $white;
+      font-weight: bolder;
+      &:after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: .08rem;
+        background-color: $blue;
+      }
+    }
+  }
+  .goods-wrapper {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 100%;
+    width: 7.733333rem;
+    .goods-list{
+      .ls-header {
+        position: relative;
+        padding: .2rem .8rem .2rem .266667rem;
+        //background-color: #f1f1f1;
+        background-color: $gray-200;
+        .title{
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: end;
+          -ms-flex-align: end;
+          align-items: flex-end;
+          overflow: hidden;
+          strong{
+            margin-right: .133333rem;
+            font-weight: 700;
+            font-size: .373333rem;
+            color: $gray-700;
+            -webkit-box-flex: 0;
+            -ms-flex: none;
+            flex: none;
+          }
+        }
+      }
+      .list-item {
+        li {
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          position: relative;
+          padding: .4rem .266667rem;
+          margin-bottom: 1px;
+          min-height: 2.933333rem;
+          background-color: $white;
+          .img {
+            margin-right: -30%;
+            width: 30%;
+            vertical-align: top;
+            img {
+              width: 100%;
+              border-radius: .053333rem;
+            }
+          }
+          .desc {
+            position: relative;
+            width: 100%;
+            padding-bottom: .666667rem;
+            padding-left: calc(30% + .266667rem);
+            .title {
+              font-size: .4rem;
+              font-weight: 700;
+              line-height: 1.1;
+              overflow: hidden;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-pack: justify;
+              -ms-flex-pack: justify;
+              justify-content: space-between;
+            }
+            .info {
+              margin: .133333rem 0 !important;
+              font-size: .3rem;
+              color: $gray-500;
+            }
+            .price {
+              position: absolute;
+              bottom: 0;
+              font-weight: 700;
+              font-size: .426667rem;
+              line-height: .426667rem;
+              color: $orange;
+              padding: .093333rem;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: baseline;
+              -ms-flex-align: baseline;
+              align-items: baseline;
+            }
+            .buy {
+              position: absolute;
+              right: 0;
+              bottom: -.066667rem;
+              .ttt{
+                display: inline-block;
+                font-size: .346667rem;
+                white-space: nowrap;
+              }
+              a {
+                color: $white;
+                display: inline-block;
+                padding: .093333rem;
+                vertical-align: middle;
+                text-decoration: none;
+              }
+              .change{
+                display: inline-block;
+                width: $size-title *1.5;
+                height: $size-title *1.5;
+                border: 2px solid $blue;
+                border-radius: 50% !important;
+                font-weight: bolder;
+                text-align: center;
+                background: $blue;
+                color: $white;
+              }
+              .decrease{
+                background: $white;
+                color: $blue;
+              }
+              .choosed{
+                display: inline-block;
+                text-align: center;
+                color: $danger !important;
+                vertical-align: middle;
+                font-size: .373333rem;
+                font-weight: bolder;
+                //line-height: $size-title *1.5;
+                height: $size-title *1.5;
+                width: .8rem;
+                border: none;
+                overflow: hidden;
+              }
+              .passive{
+                display: none;
+              }
+            }
+          }
+        }
+      }
+    }
+    .busy{
+      .buy{
+        .badge{
+          background: $gray-500;
+        }
+      }
+    }
+  }
+}
+
+.copyright {
+  font-size: $size-desc;
+  color: $gray-500;
+}

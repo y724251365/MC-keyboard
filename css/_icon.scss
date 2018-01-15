@@ -1,0 +1,106 @@
+
+@font-face {font-family: "cui";
+  src: url('../fonts/iconfont.eot?t=1500375658417'); /* IE9*/
+  src: url('../fonts/iconfont.eot?t=1500375658417#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('../fonts/iconfont.woff?t=1500375658417') format('woff'), /* chrome, firefox */
+  url('../fonts/iconfont.ttf?t=1500375658417') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+*/
+  url('../fonts/iconfont.svg?t=1500375658417#cui') format('svg'); /* iOS 4.1- */
+}
+
+.cui {
+  font-family:"cui" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.cui-spinner:before { content: "\e601"; }
+
+.cui-alipay:before { content: "\e600"; }
+
+.cui-cash:before { content: "\e602"; }
+
+.cui-transfer:before { content: "\e603"; }
+
+.cui-mobile:before { content: "\e607"; }
+
+.cui-stock:before { content: "\e609"; }
+
+.cui-collection:before { content: "\e60b"; }
+
+.cui-key:before { content: "\e619"; }
+
+.cui-vip:before { content: "\e624"; }
+
+.cui-success:before { content: "\e625"; }
+
+.cui-fail:before { content: "\e626"; }
+
+.cui-warning:before { content: "\e627"; }
+
+.cui-tips:before { content: "\e628"; }
+
+.cui-help:before { content: "\e629"; }
+
+.cui-waiting:before { content: "\e62a"; }
+
+.cui-setting:before { content: "\e62d"; }
+
+.cui-tag:before { content: "\e665"; }
+
+.cui-explore:before { content: "\e667"; }
+
+.cui-people:before { content: "\e664"; }
+
+.cui-shopcart:before { content: "\e604"; }
+
+.cui-remind:before { content: "\e65e"; }
+
+.cui-jiahao1:before { content: "\e727"; }
+
+.cui-jianhao:before { content: "\e729"; }
+
+.cui-shizhongfill:before { content: "\e750"; }
+
+.cui-wechat:before { content: "\e63a"; }
+
+.cui-jd:before { content: "\e631"; }
+
+.cui-tousu:before { content: "\e6e3"; }
+
+.cui-addressbook:before { content: "\e6e2"; }
+
+.cui-brush:before { content: "\e6e5"; }
+
+.cui-coordinates:before { content: "\e6ec"; }
+
+.cui-createtask:before { content: "\e6ee"; }
+
+.cui-group:before { content: "\e6ff"; }
+
+.cui-home:before { content: "\e702"; }
+
+.cui-qrcode:before { content: "\e71c"; }
+
+.cui-redpacket:before { content: "\e71d"; }
+
+.cui-refresh:before { content: "\e71e"; }
+
+.cui-sound:before { content: "\e72f"; }
+
+.cui-warning_fill:before { content: "\e73d"; }
+
+.cui-weixin:before { content: "\e6b7"; }
+
+.cui-search:before { content: "\e741"; }
+
+.cui-baidu:before { content: "\e68b"; }
+
+.cui-shop:before { content: "\e747"; }
+
+.cui-shake:before { content: "\e74e"; }
+
+.cui-decoration:before { content: "\e74f"; }
+
+.cui-QQ:before { content: "\e60c"; }

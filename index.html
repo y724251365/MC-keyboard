@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title></title>
+    <link rel="stylesheet" href="css/cui.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/getdata.js"></script>
+    <script src="js/flexible.min.js"></script>
+</head>
+<body>
+<header class="header-fixed">
+    <div class="shop">
+        <img class="img" src="img/ytb.png">
+        <div class="detail">
+            <h3 class="name"></h3>
+            <div id="Mach_snno" class="sn"></div>
+            <div class="server"><a href=''>服务热线 : <span id="removePhone"></span></a></div>
+            <div class="status"><span id="Mach_status" class="badge badge-light badge-pill"></span></div>
+        </div>
+    </div>
+    <div class="activity">
+        <div class="title">
+            <i class="zeng">Tips</i><span>友情提示：目前只允许充值整数金额</span>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="card coin-keyboard" style="">
+        <div class="amount-wrapper">
+            <div class="amount">
+                <div class="tips1">
+                    <span id="pay-title" class="title">请输入支付金额</span>
+                    <span id="pay-money" class="money" style="display: none">￥0.00</span>
+                </div>
+                <!--<div class="tips2">-->
+                    <!--&lt;!&ndash;这里是限制提示，改为余额提示&ndash;&gt;-->
+                    <!--<span id="pay-limit">最大充值金额</span>-->
+                <!--</div>-->
+            </div>
+        </div>
+        <div class="keypad">
+            <div class="colx">
+                <div class="key digit">1</div>
+                <div class="key digit">4</div>
+                <div class="key digit">7</div>
+                <div class="key back"></div>
+            </div>
+            <div class="colx">
+                <div class="key digit">2</div>
+                <div class="key digit">5</div>
+                <div class="key digit">8</div>
+                <div class="key digit">0</div>
+            </div>
+            <div class="colx">
+                <div class="key digit">3</div>
+                <div class="key digit">6</div>
+                <div class="key digit">9</div>
+                <div class="key digit">.</div>
+            </div>
+            <div class="colx">
+                <div class="key empty">清除</div>
+                <div class="key enter toPay">确定</div>
+            </div>
+        </div>
+    </div>
+    <!--&lt;!&ndash;投币卡 硬币&ndash;&gt;-->
+    <!--<div class="card putcoin">-->
+        <!--<div class="title">请选择套餐</div>-->
+        <!--<div class="coin-circle busy" id="coin-circle">-->
+            <!--&lt;!&ndash;<div class="col-4">&ndash;&gt;-->
+            <!--&lt;!&ndash;<div class="coin" data-price="1" data-coin="1">&ndash;&gt;-->
+            <!--&lt;!&ndash;<span>￥</span>&ndash;&gt;-->
+            <!--&lt;!&ndash;<span>5</span>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+            <!--&lt;!&ndash;<p class="coin-info">套餐一</p>&ndash;&gt;-->
+            <!--&lt;!&ndash;</div>&ndash;&gt;-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<div class="keypad">-->
+        <!--<div class="colx">-->
+            <!--<div class="key digit">1</div>-->
+            <!--<div class="key digit">4</div>-->
+            <!--<div class="key digit">7</div>-->
+            <!--<div class="key back"></div>-->
+        <!--</div>-->
+        <!--<div class="colx">-->
+            <!--<div class="key digit">2</div>-->
+            <!--<div class="key digit">5</div>-->
+            <!--<div class="key digit">8</div>-->
+            <!--<div class="key digit">0</div>-->
+        <!--</div>-->
+        <!--<div class="colx">-->
+            <!--<div class="key digit">3</div>-->
+            <!--<div class="key digit">6</div>-->
+            <!--<div class="key digit">9</div>-->
+            <!--<div class="key digit">.</div>-->
+        <!--</div>-->
+        <!--<div class="colx">-->
+            <!--<div class="key empty">清除</div>-->
+            <!--<div class="key enter toPay">确定</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--会员卡-->
+    <div id="member-card" class="member">
+        <div id="CardDetail" class="member-item">
+            <div class="title">会员卡: <span id='Card_NO'></span></div>
+            <div class="balance">卡余额 ¥<span id="Card_sum"></span></div>
+        </div>
+        <div class="member-item">
+            <div class="tips">余额可以再次投币使用</div>
+            <a id="helpbtn" class="btn">帮助</a>
+            <button type="button" class="btn btn-primary act_btn">充值</button>
+        </div>
+    </div>
+    <footer class="footer">
+        <p class="copyright">Copyright &copy; 2017</p>
+    </footer>
+</div>
+<div id="payment" class="full-modal toubi-success">
+    <div class="success-wrapper">
+        <div class="success-ico">
+            <i class="cui cui-success"></i>
+        </div>
+        <div class="success-detail">
+            <div id="pay-result" class="mui-h2">支付成功</div>
+        </div>
+        <div id="showtime" class="success-time" style="display: none">
+            <span class="dtime">00:00:00</span>
+        </div>
+        <div class="am-process">
+            <div class="am-process-item pay">
+                <i class="am-icon process success" aria-hidden="true"></i>
+                <div class="am-process-content">
+                    <div class="am-process-main">支付成功</div>
+                </div>
+                <div class="am-process-down-border"></div>
+            </div>
+            <div id="process-coin" class="am-process-item unpay">
+                <i class="am-icon process unpay" aria-hidden="true"></i>
+                <div class="am-process-content">
+                    <div id="coin_finish0" class="am-process-main">正在启动，请耐心等候<i class="loading-spinner"></i></div>
+                </div>
+                <div class="am-process-up-border"></div>
+                <div class="am-process-down-border"></div>
+            </div>
+            <div id="process-end" class="am-process-item unpay">
+                <i class="am-icon process unpay" aria-hidden="true"></i>
+                <div class="am-process-content">
+                    <div id="coin_finish1" class="am-process-main">等待启动</div>
+                </div>
+                <div class="am-process-up-border"></div>
+            </div>
+        </div>
+        <div class="success-over">
+            <button id='coin_finish' type="button" class="btn btn-primary" disabled><i class="loading-spinner"></i>正在启动
+            </button>
+        </div>
+    </div>
+</div>
+
+<!--过期重新扫码页面-->
+<div id="o-time" class="full-modal">
+    <div class="error-wrapper">
+        <div class="error-ico">
+            <i class="cui cui-qrcode"></i>
+        </div>
+        <div class="error-handle">请重新扫描二维码</div>
+        <div class="error-tips">错误详情：mq100 掉线</div>
+        <div class="help-tips">提示：主页下方可以查询您的<span class="text-danger">会员卡</span><br/>余额可以再次投币使用</div>
+    </div>
+</div>
+
+<!--出货失败页面-->
+<div id="o-fail" class="full-modal">
+    <div class="error-wrapper">
+        <div class="error-ico">
+            <i class="cui cui-warning"></i>
+        </div>
+
+        <div class="error-handle">款项已退回到您的余额</div>
+        <div class="error-tips">错误详情：gd100 出货未成功</div>
+        <div class="help-tips">提示：主页下方可以查询您的<span class="text-danger">会员卡</span><br/>余额可以再次投币使用</div>
+        <div>
+            <button id='coin_fail' type="button" class="btn btn-light">返回主页</button>
+        </div>
+    </div>
+</div>
+<script src="js/cui.js?v=0.99"></script>
+<script>
+    // var sid = "<%= sid %>";//alert(sid);
+    // var insetcoin = "<%= insetcoin %>";
+    // var mcode = "<%= mcode %>";
+    // var sn = "<%= machsn %>"; // machsn
+    // var machalive = "<%= machalive %>";
+    // var myCardBalance = "<%= amount %>";           // 卡余额
+    // var myRedPacket = "<%= red_packet %>";         // 虚拟余额
+    // var cardno = "<%= cardno %>";                  // 卡号
+    // var client = "<%= consumerclient %>"; // mwf
+    //
+    // var Mqttclient = "";                                 // mqtt 客户端
+    // var tn;                                    // 订单单号
+    // var mySumBalance;                               // 总余额
+    // var status_str;                                 // 设备状态
+    //
+    // var loading = JSON.parse('<%- loading %>');      //loading配置
+    //
+    //
+    // var promotions = JSON.parse('<%- promotions %>');
+    // console.log('优惠活动： >>>>>>>>>>>>>>>');
+    // console.log(<%= complain %>);
+    // console.log(<%= configer.length %>);
+    // console.log(promotions);
+    var recharges = [];
+    for (var i = 0; i < promotions.length; i++) {
+        var str = '充值' + promotions[i].paymoney + '元,赠送' + promotions[i].vrmoney + '元;'
+        recharges.push(str);
+    }
+
+
+    //购物结束
+    $('#coin_finish').on('click', function () {
+        $('#payment').removeClass('full-active');
+    })
+    //出货失败
+    $('#coin_fail').on('click', function () {
+        $('#o-fail').removeClass('full-active');
+    })
+
+</script>
+<script src="js/app.js"></script>
+</body>
+</html>
